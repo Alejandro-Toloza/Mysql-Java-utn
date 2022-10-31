@@ -34,16 +34,18 @@ public class Main {
 
         // segunda pantalla
         Facade.setIdAux(idCat);
+        String nombreCategoria= (idCat==1?"COMPUTACION":idCat==2?"TELEFONIA":idCat==3?"VIDEOJUEGOS":"-");
 
-        System.out.println("-- SELECCIONES PRODUCTO --");
+        System.out.println("-- SELECCIONE PRODUCTO DE "+nombreCategoria);
         List<ProductoDTO> productoDTOList = facade.listProducto();
 
         for(ProductoDTO dto: productoDTOList){
             System.out.println("Producto: "+dto.getId_producto()+", descripcion: "+dto.getDescripcion()+",  id categoria: "+
-            dto.getId_categoria()+","+dto.getFgl_discontinuo()+","+dto.getId_proveedor()+","+dto.getUnidades_reposicion()
-            +".\nunidades en stock: "+dto.getUnidades_stock()+"\nprecio unitario:$"+dto.getPrecio_unitario());
-            System.out.println("---***---***---***---***");
+            dto.getId_categoria()+".\nunidades en stock: "+dto.getUnidades_stock()+"\nprecio unitario:$"+dto.getPrecio_unitario());
+            System.out.println("--------------------------------------");
         }
+
+        //Tercera Pantalla:
 
 
         //Close Scanner
