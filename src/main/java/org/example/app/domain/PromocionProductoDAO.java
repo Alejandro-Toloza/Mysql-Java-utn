@@ -1,6 +1,5 @@
 package org.example.app.domain;
 
-import org.example.app.dto.PromocionDTO;
 import org.example.app.dto.PromocionProductoDTO;
 import org.example.app.jdbc.MyJdbc;
 
