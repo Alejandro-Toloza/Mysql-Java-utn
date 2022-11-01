@@ -1,13 +1,13 @@
 package org.example.app.domain;
 
-import org.example.app.dto.CategoriaDTO;
-import org.example.app.dto.ProductoDTO;
+import org.example.app.dto.*;
 
 import java.util.List;
 
 public class Facade {
 
-    private static int idAux;
+    private static int idCatAux;
+    private static int idProductoAux;
 
     //TODO: Duda
     //private int idAux2;
@@ -20,13 +20,34 @@ public class Facade {
         ProductoDAO dao = new ProductoDAO();
         return dao.findAll();
     }
-
-    public static int getIdAux() {
-        return Facade.idAux;
+    public List<PromocionDTO> listPromocion(){
+        PromocionDAO dao = new PromocionDAO();
+        return dao.findAll();
+    }
+    public List<PromocionVigenciaDTO> listPromocionVigencia(){
+        PromocionVigenciaDAO dao = new PromocionVigenciaDAO();
+        return dao.findAll();
+    }
+    public List<PromocionProductoDTO> listPromocionProducto(){
+        PromocionProductoDAO dao = new PromocionProductoDAO();
+        return dao.findAll();
     }
 
-    public static void setIdAux(int idAux) {
-        Facade.idAux = idAux;
+
+    public static int getIdAux() {
+        return Facade.idCatAux;
+    }
+
+    public static void setIdAux(int idCatAux) {
+        Facade.idCatAux = idCatAux;
+    }
+
+    public static int getIdProductoAux() {
+        return idProductoAux;
+    }
+
+    public static void setIdProductoAux(int idProductoAux) {
+        Facade.idProductoAux = idProductoAux;
     }
 
     //TODO: Duda
